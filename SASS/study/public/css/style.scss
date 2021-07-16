@@ -1,0 +1,79 @@
+
+@import "./_variables";
+@import "./mixin";
+
+.content{
+    //truyen k tham so => lay gia tri mac dinh #eee
+    @include bgc();
+    position: relative;
+    padding: 20px;
+
+    h1{
+        color: black;
+    }
+    p{
+        //nested voi nhung css properties co cung tien` to' VD: font
+        font: { 
+            size: 20px;
+            weight: 300;
+            style: italic;
+        }
+    }
+    .btn{
+        padding: 10px;
+        // truyen tham so la 1 bien
+        @include bgc($color);
+        &:hover, &:focus{
+            //truyen tham so la gia tri truc tiep
+            @include bgc(#ddd);
+        }
+    }
+
+    &-left{
+        padding: 10px 0;
+    }
+
+    .variable{
+        border: 1px solid #ccc;
+
+        h1{
+            text-align: center;
+        }
+
+        .colorWr{   
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+
+            .cl{
+                width: 300px;
+                height: 100px;
+                background-color: $color;
+            }
+
+            $color: blue;
+            .cl1{
+                $color: red;
+                background-color: $color;
+            }
+
+            .cl2{
+                background-color: $color;
+            }
+        }
+    }
+
+    .#{$class}{
+        padding: 10px 0;
+    }
+
+    .mixin{
+        width: 100px;
+        height: 100px;
+        background-color: $color;
+        @include absoluteCenter("horizontal");
+        @include minWidth(1024px){
+            display: none;
+        }
+    }
+}

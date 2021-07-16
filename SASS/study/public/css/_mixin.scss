@@ -1,0 +1,30 @@
+//dung lai dc nhieu lan
+//#eee la gia tri mac dinh khi goi mixin ma khong truyen tham so
+@mixin bgc($color: #eee) {
+    background-color: $color;
+}
+
+@mixin absoluteCenter($direction: "both") {
+    position: absolute;
+    @if $direction == "horizontal" {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);      
+    }
+    @if $direction == "vertical" {
+        top: 50%;
+        transform: translateY(-50%);      
+    }
+    @if $direction == "both" {
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%);    
+        transform: translateY(-50%);  
+    }
+}
+
+@mixin minWidth($width) {
+    @media screen and (min-width: $width) {
+        @content;
+    }
+}
