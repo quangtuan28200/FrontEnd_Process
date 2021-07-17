@@ -1,0 +1,45 @@
+
+.about{
+    padding: 10px 100px;
+
+    &-content{
+        &__heading{
+            text-transform: uppercase;
+            margin: 16px 0;
+        }
+
+        &__more{
+            display: inline-block;
+            margin-top: 16px;
+        }
+    }
+
+    &__imgs{
+        position: relative;
+        
+        .about__img{
+            transition: transform .2s ease;
+            position: absolute;
+            border-radius: 8px;
+            width: 50%;
+
+            &--p2{
+                top: 32px;
+                right: 0;
+                z-index: 2;
+            }
+
+            &--p3{
+                bottom: 0;
+                left: 100px;
+                z-index: 3;
+            }
+
+            &:hover{
+                cursor: pointer;
+                transform: scale(1.05);
+                z-index: 4;
+            }
+        }
+    }
+}

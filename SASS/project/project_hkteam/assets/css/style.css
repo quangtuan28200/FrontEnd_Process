@@ -44,35 +44,91 @@ a {
   text-decoration: none;
   color: #777777; }
 
+.headText {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 20px; }
+  .headText__main {
+    font-size: 6.2rem;
+    font-weight: 400;
+    display: block;
+    letter-spacing: 4px;
+    animation: toRight 1s ease; }
+  .headText__sub {
+    font-size: 2rem;
+    font-weight: 700;
+    display: block;
+    letter-spacing: 13px;
+    animation: toLeft 1s ease; }
+
+.container__heading h3 {
+  text-align: center;
+  font-size: 3.2rem;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  background: linear-gradient(to right, #fff, #1c3eff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
 .btn {
   position: relative;
-  padding: 10px 16px;
-  border-radius: 50px;
   display: inline-block;
   color: #777777;
-  text-transform: uppercase;
-  transition: all .1s ease; }
+  cursor: pointer; }
+  .btn--header {
+    padding: 10px 16px;
+    border-radius: 50px;
+    text-transform: uppercase; }
+    .btn--header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      border-radius: 50px;
+      transition: all .4s ease; }
+  .btn--about {
+    padding: 10px;
+    color: #5a73fc; }
+    .btn--about i {
+      position: relative;
+      top: 2px;
+      padding-left: 2px; }
+    .btn--about::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      bottom: 0;
+      height: 10%;
+      width: 100%;
+      transition: all .2s ease;
+      background-color: #5a73fc;
+      border-radius: 4px; }
   .btn--white, .btn--white::after {
     background-color: white; }
-  .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 0px #ccc; }
-    .btn:hover::after {
-      transform: scale(1.4, 1.6);
-      opacity: 0; }
-  .btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 3px 0px #ccc; }
-  .btn::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
-    transition: all .2s ease; }
+  .btn__anim--header {
+    transition: all .1s ease;
+    animation: toTop 1s ease; }
+    .btn__anim--header:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 0px #ccc; }
+      .btn__anim--header:hover::after {
+        transform: scale(1.4, 1.6);
+        opacity: 0; }
+    .btn__anim--header:active {
+      transform: translateY(-1px);
+      box-shadow: 0 3px 0px #ccc; }
+  .btn__anim--about {
+    transition: all .1s ease; }
+    .btn__anim--about:hover {
+      color: white; }
+      .btn__anim--about:hover::after {
+        height: 100%; }
 
 header {
   background-image: linear-gradient(to bottom right, rgba(142, 158, 252, 0.6), rgba(28, 62, 255, 0.6)), url("../imgs/background1.jpg");
@@ -93,21 +149,31 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); }
-    header .headText-box .headText {
-      color: #fff;
-      text-transform: uppercase;
-      margin-bottom: 20px; }
-      header .headText-box .headText__main {
-        font-size: 6.2rem;
-        font-weight: 400;
-        display: block;
-        letter-spacing: 4px;
-        animation: toRight 1s ease; }
-      header .headText-box .headText__sub {
-        font-size: 2rem;
-        font-weight: 700;
-        display: block;
-        letter-spacing: 13px;
-        animation: toLeft 1s ease; }
-    header .headText-box .btn {
-      animation: toTop 1s ease; }
+
+.about {
+  padding: 10px 100px; }
+  .about-content__heading {
+    text-transform: uppercase;
+    margin: 16px 0; }
+  .about-content__more {
+    display: inline-block;
+    margin-top: 16px; }
+  .about__imgs {
+    position: relative; }
+    .about__imgs .about__img {
+      transition: transform .2s ease;
+      position: absolute;
+      border-radius: 8px;
+      width: 50%; }
+      .about__imgs .about__img--p2 {
+        top: 32px;
+        right: 0;
+        z-index: 2; }
+      .about__imgs .about__img--p3 {
+        bottom: 0;
+        left: 100px;
+        z-index: 3; }
+      .about__imgs .about__img:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+        z-index: 4; }
