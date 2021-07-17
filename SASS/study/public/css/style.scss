@@ -2,11 +2,26 @@
 @import "./_variables";
 @import "./mixin";
 
-.content{
-    //truyen k tham so => lay gia tri mac dinh #eee
+//function
+@function cal($a, $b){
+    @return ($a + $b) * 1px;
+}
+
+// extend
+%extend{
     @include bgc();
     position: relative;
-    padding: 20px;
+    padding: cal(10, 10);
+}
+
+.content{
+    //truyen k tham so => lay gia tri mac dinh #eee
+
+    // @extend %extend; su dung extend
+
+    @include bgc();
+    position: relative;
+    padding: cal(10, 10);
 
     h1{
         color: black;

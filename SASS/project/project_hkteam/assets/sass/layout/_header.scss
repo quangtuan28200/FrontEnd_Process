@@ -1,0 +1,59 @@
+header{
+    background: {
+        image: linear-gradient(to bottom right , rgba($primary-color-light, .6), rgba($primary-color-dark, .6)),
+            url("../imgs/background1.jpg");
+        size: cover;
+        position: top;
+    };
+    height: 100vh;
+    clip-path: ellipse(80% 67% at 50% 16%);
+    position: relative;   
+    
+    .logo-box{
+        position: absolute;
+        top: 16px;
+        left: 16px;
+
+        img{
+            height: 70px;
+        }
+    }
+    
+    .headText-box{
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .headText{
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            
+            &__main{
+                font: {
+                    size: 6.2rem;
+                    weight: 400;
+                }
+                display: block;
+                letter-spacing: 4px;
+                animation: toRight 1s ease;
+            }
+
+            &__sub{
+                font: {
+                    size: 2rem;
+                    weight: 700;
+                }
+                display: block;
+                letter-spacing: 13px;
+                animation: toLeft 1s ease;
+            }
+        }
+
+        .btn{
+            animation: toTop 1s ease;
+        }
+    }
+}
