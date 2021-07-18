@@ -2,7 +2,7 @@
 .headText{
     color: #fff;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
     
     &__main{
         font: {
@@ -10,7 +10,7 @@
             weight: 400;
         }
         display: block;
-        letter-spacing: 4px;
+        letter-spacing: .4rem;
         animation: toRight 1s ease;
     }
 
@@ -20,21 +20,26 @@
             weight: 700;
         }
         display: block;
-        letter-spacing: 13px;
+        letter-spacing: 1.3rem;
         animation: toLeft 1s ease;
     }
 }
 
-.container{
+.section{
     &__heading h3{
         text-align: center;
         font-size: 3.2rem;
-        margin-bottom: 28px;
+        margin-bottom: 2.8rem;
         text-transform: uppercase;
-        letter-spacing: 4px;
+        letter-spacing: .4rem;
         background: linear-gradient(to right, #fff, $primary-color-dark);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+
+    &-content__heading{
+        text-transform: uppercase;
+        margin: 1.6rem 0;
     }
 }
