@@ -222,6 +222,58 @@ li {
     background-color: #5a73fc;
     transition: .4s ease; }
 
+.popup {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: .2s ease;
+  opacity: 0;
+  visibility: hidden; }
+  .popup__wr {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    display: flex;
+    width: 75%;
+    height: 40rem;
+    background-color: white;
+    border-radius: 6rem;
+    overflow: hidden;
+    transition: .4s ease; }
+  .popup__left {
+    width: 33%; }
+    .popup__left img {
+      width: 100%;
+      height: 50%;
+      object-fit: cover;
+      display: block; }
+  .popup__right {
+    width: 67%;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    .popup__right .popup__heading h3, .popup__right .popup__heading h4 {
+      margin-bottom: 0; }
+  .popup__close {
+    position: absolute;
+    padding: 0 16px;
+    top: 2rem;
+    right: 3rem;
+    font-size: 3rem; }
+    .popup__close:hover {
+      opacity: .8; }
+  .popup:target {
+    visibility: visible;
+    opacity: 1; }
+    .popup:target .popup__wr {
+      transform: translate(-50%, -50%) scale(1); }
+
 header {
   background-image: linear-gradient(to bottom right, rgba(142, 158, 252, 0.6), rgba(28, 62, 255, 0.6)), url("../imgs/background1.jpg");
   background-size: cover;
