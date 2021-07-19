@@ -26,13 +26,13 @@
 }
 
 .section{
-    &__heading h3{
-        text-align: center;
+    &__heading{
+        display: inline-block;
         font-size: 3.2rem;
         margin-bottom: 2.8rem;
         text-transform: uppercase;
         letter-spacing: .4rem;
-        background: linear-gradient(to right, #fff, $primary-color-dark);
+        background: linear-gradient(to right, $primary-color-light, $primary-color-dark);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;

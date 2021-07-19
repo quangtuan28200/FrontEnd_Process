@@ -34,8 +34,8 @@
         <div class="grid">
             <section class="about">
                 <div class="wide">           
-                    <div class="section__heading">
-                        <h3>story about us</h3>
+                    <div class="about__heading">
+                        <h3 class="section__heading">story about us</h3>
                     </div>
                     <div class="row">
                         <div class="about-content col l-6">
@@ -105,8 +105,8 @@
     
             <section class="cources">
                 <div class="wide">
-                    <div class="section__heading">
-                        <h3>Our cources</h3>
+                    <div class="cources__heading">
+                        <h3 class="section__heading">Our cources</h3>
                     </div>
                     <div class="row">
                         <div class="col l-4">
@@ -205,8 +205,8 @@
                 </div>
 
                 <div class="wide">
-                    <div class="section__heading">
-                        <h3>testimonials</h3>
+                    <div class="testimonials__heading">
+                        <h3 class="section__heading">testimonials</h3>
                     </div>
 
                     <div class="testimonials--wr">
@@ -246,27 +246,35 @@
                 <div class="wide">
                     <div class="enroll__wr">
                         <div class="enroll__form">
-                            <div class="section__heading">
-                                <h3>story about us</h3>
+                            <div class="enroll__heading">
+                                <h3 class="section__heading">enroll now</h3>
                             </div>
                             <div class="form__group">
-                                <input type="text" class="form__input" placeholder="Full name">
+                                <input type="text" class="form__input" name="name" placeholder=" " autocomplete="off">
+                                <label class="form__label" for="male">Full name</label>
                             </div>
                             <div class="form__group">
-                                <input type="text" class="form__input" placeholder="Email">
+                                <input type="text" class="form__input" name="email" placeholder=" " autocomplete="off">
+                                <label class="form__label" for="male">Email</label>
                             </div>
                             <div class="form__group">
                                 <div class="form-radio__group">
-                                    <input id="male" type="radio" class="form-radio__input">
-                                    <lable class="form-radio__lable" for="malle">male</lable>
+                                    <input class="form-radio__input" type="radio" id="male" name="gender"/>
+                                    <label class="form-radio__lable" for="male">
+                                        <span class="form-radio__btn"></span>
+                                        Male
+                                    </label>
                                 </div>
                                 <div class="form-radio__group">
-                                    <input id="female" type="radio" class="form-radio__input">
-                                    <lable class="form-radio__lable" for="malle">female</lable>
+                                    <input class="form-radio__input" type="radio" id="female" name="gender"/>
+                                    <label class="form-radio__lable" for="female">
+                                        <span class="form-radio__btn"></span>
+                                        Female
+                                    </label>
                                 </div>
                             </div>
                             <div class="form__group">
-                                <button type="submit" class="btn btn--primaryCl btn__anim--header">Submit</button>
+                                <button type="submit" class="btn form__btn btn--primaryCl btn__anim--header">Submit</button>
                             </div>
                         </div>
                     </div>
@@ -274,5 +282,37 @@
             </section>
         </div>
     </main>
+
+    <footer>
+        <div class="grid">
+            <div class="wide">
+                <div class="footer__wr">
+                    <div class="footer-logo">
+                        <img src="./assets/imgs/logopng.png" alt="logo">
+                        <div class="footer-logo__text">
+                            <h3 class="section__heading">selftaught</h3>
+                        </div>
+                    </div>
+                    <div class="footer__content row">
+                        <div class="col l-4">
+                            <div class="footer__nav">
+                                <ul>
+                                    <li><a href="#">address</a></li>
+                                    <li><a href="#">contacts</a></li>
+                                    <li><a href="#">policy</a></li>
+                                    <li><a href="#">sponsors</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col l-4 l-o-4">
+                            <div class="footer__copyright">
+                                Copyright © by TuanKMA. You are 100% allowed to use this webpages for both personal and commercial use, but NOT to claim it as your personal design.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

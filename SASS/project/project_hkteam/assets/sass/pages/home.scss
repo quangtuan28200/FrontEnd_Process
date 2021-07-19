@@ -1,5 +1,9 @@
 
 .about{
+    &__heading{
+        text-align: center;
+    }
+
     &-content{
         &__more{
             display: inline-block;
@@ -75,6 +79,10 @@
 
 .cources{
     margin-bottom: 4rem;
+
+    &__heading{
+        text-align: center;
+    }
 
     .row{
         margin: 0 -2rem;
@@ -220,6 +228,10 @@
 .testimonials{
     position: relative;
 
+    &__heading{
+        text-align: center;
+    }
+
     .bg-video{
         position: absolute;
         width: 100%;
@@ -227,6 +239,7 @@
         top: 0;
         left: 0;
         z-index: -1;
+        opacity: .2;
 
         &__content{
             width: 100%;
@@ -300,16 +313,19 @@
 
 .enroll{
     padding: 6rem 0;
-    background-image: linear-gradient(to right bottom, $primary-color-light, $primary-color-dark);
-    
+    background-image: linear-gradient(to right bottom, $primary-color-light, $primary-color);
+
     &__wr{
         background-image: url('../imgs/background3.jpg');
         border-radius: 5rem;
         background-size: cover;
+        overflow: hidden;
     }
 
     &__form{
         width: 50%;
         padding: 6rem;
+        clip-path: circle(100% at 0 50%);
+        background-color: rgba(white, .8);
     }
 }

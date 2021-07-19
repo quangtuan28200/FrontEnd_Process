@@ -1,23 +1,111 @@
 .form{
     &__group{
-        margin-bottom: 2rem;
-        
-        :last-child{
+        margin-bottom: 3rem;
+        width: 80%;
+        position: relative;
+
+        &:last-child{
             margin-bottom: 0;
         }
     }
 
+    &__label{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 21px;
+        transition: .2s;
+        font-weight: 600;
+        color: #ccc;
+        user-select: none;
+        pointer-events: none;
+    }
+
     &__input{
+        outline: none;
         color: inherit;
         font-size: 1.5rem;
         font-family: inherit;
         padding: 1.5rem 2rem;
-        border-radius: 2px;
-        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 4px;
+        background-color: rgba(255, 255, 255, 0.8);
         border: none;
-        border-bottom: 3px solid transparent;
-        width: 80%;
+        width: 100%;
         display: block;
         transition: all .3s;
+        position: relative;
+        border-bottom: 4px solid transparent;
+
+        &:focus, &:not(:placeholder-shown){
+            box-shadow: 0 0 12px #888;
+            border-bottom: 4px solid $primary-color;
+
+            & + .form__label{
+                top: -16px;
+                left: 0;
+                color: $text-color;
+            }
+        }
+    }
+
+    &__btn{
+        font-size: 1.6rem;
+        padding: 1.4rem 2.8rem;
+    }
+
+    &-radio{
+        &__group{
+            display: inline-block;
+            width: 45%;
+        }
+
+        &__input{
+            display: none;
+        }
+        
+        &__input:checked ~ &__lable{
+            & .form-radio__btn{
+                // height: 3rem;
+                // width: 3rem;
+                &::after{
+                    opacity: 1;
+                    transform: scale(.4);
+                }
+            }
+        }
+
+        &__lable{
+            position: relative;
+            padding-left: 44px;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        &__btn{
+            height: 3rem;
+            width: 3rem;
+            border: 0.4rem solid $primary-color;
+            border-radius: 10rem;
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+
+            &::after{
+                content: "";
+                opacity: 0;
+                height: 3rem;
+                width: 3rem;
+                border-radius: 10rem;
+                display: inline-block;
+                position: absolute;
+                left: -4px;
+                top: -4px;
+                background-color: $primary-color;
+                transition: .4s ease;
+            }
+        }
     }
 }
