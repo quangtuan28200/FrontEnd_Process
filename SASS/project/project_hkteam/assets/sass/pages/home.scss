@@ -1,5 +1,10 @@
 
 .about{
+    padding-bottom: 6rem;
+    @include responsive('tablet'){
+        padding-bottom: 0;
+    }
+
     &__heading{
         text-align: center;
     }
@@ -9,26 +14,42 @@
             display: inline-block;
             margin-top: 1.6rem;
         }
+        @include responsive('tablet'){
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
     }
 
     &__imgs{
         position: relative;
+        @include responsive('tablet'){
+            margin-top: 2rem;
+        }
         
         .about__img{
             transition: transform .2s ease;
             position: absolute;
             border-radius: .8rem;
             width: 50%;
+            @include responsive('tablet'){
+                width: 100%;
+                position: static;
+            }
+
+            &--p1{
+                top: 12%;
+            }
 
             &--p2{
-                top: 3.2rem;
+                top: 32%;
                 right: 1.2rem;
                 z-index: 2;
             }
 
             &--p3{
-                bottom: 0;
-                left: 10rem;
+                top: 52%;
+                left: 12%;
                 z-index: 3;
             }
 
@@ -36,6 +57,20 @@
                 cursor: pointer;
                 transform: scale(1.05);
                 z-index: 4;
+            }
+
+            @include responsive('tablet'){
+                &--p1{
+                    top: 25%;
+                }
+    
+                &--p2{
+                    top: 35%;
+                }
+    
+                &--p3{
+                    top: 48%;
+                }
             }
         }
     }
@@ -52,7 +87,19 @@
     };
     clip-path: ellipse(80% 48% at 50% 50%);
 
+    @include responsive('tablet'){
+        clip-path: ellipse(100% 48% at 50% 50%);
+    }
+    @include responsive('phone'){
+        clip-path: ellipse(170% 48% at 50% 50%);
+    }
+
     .skill-box{
+        @include responsive('tablet'){
+            min-height: 360px;
+            margin-bottom: 20px;
+        }
+
         background-color: rgba(white, .9);
         border-radius: 5rem;
         padding: 3rem;
@@ -96,6 +143,14 @@
         perspective: 200rem;
         height: 48rem;
         position: relative;
+
+        @include responsive('tablet'){
+            margin: 0 8rem 4rem 8rem;
+        }
+
+        @include responsive('phone'){
+            margin: 0 0 4rem 0;
+        }
 
         &:hover{
             .cources__side--front{
@@ -250,6 +305,9 @@
 
     &--wr{
         padding: 0 12rem;
+        @include responsive('tablet'){
+            padding: 0;
+        }
     }
 
     &-box{
@@ -257,6 +315,14 @@
         padding: 5rem 6rem;
         margin-bottom: 20px;
         background-color: rgba(white, .8);
+
+        @include responsive('phone'){
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5rem 5rem;
+        }
         
         &:hover {
             .avt__text{
@@ -281,6 +347,11 @@
             transform: translateX(-40px);
             margin-left: 40px;
 
+            @include responsive('phone'){
+                margin-left: 0;
+                transform: translateX(0);
+            }
+
             .avt__img{
                 width: 100%;
                 transition: all .4s ease;
@@ -302,6 +373,9 @@
         
         &__text{
             margin-left: 40px;
+            @include responsive('phone'){
+                margin-left: 0;
+            }
         }
     }
 
@@ -327,5 +401,12 @@
         padding: 6rem;
         clip-path: circle(100% at 0 50%);
         background-color: rgba(white, .8);
+
+        @include responsive('tablet'){
+            width: 100%;
+        }
+        @include responsive('phone'){
+            padding: 3rem;
+        }     
     }
 }

@@ -1,4 +1,13 @@
 header{
+    //tablet-phone
+    @include responsive('tablet'){
+        clip-path: ellipse(100% 80% at 50% 16%);
+    }
+    @include responsive('phone'){
+        clip-path: ellipse(138% 80% at 50% 16%);
+    }
+
+    //PC
     background: {
         image: linear-gradient(to bottom right , rgba($primary-color-light, .6), rgba($primary-color-dark, .6)),
             url("../imgs/background1.jpg");

@@ -4,6 +4,10 @@
         width: 80%;
         position: relative;
 
+        @include responsive('phone'){
+            width: 100%;
+        }
+
         &:last-child{
             margin-bottom: 0;
         }
@@ -65,8 +69,6 @@
         
         &__input:checked ~ &__lable{
             & .form-radio__btn{
-                // height: 3rem;
-                // width: 3rem;
                 &::after{
                     opacity: 1;
                     transform: scale(.4);

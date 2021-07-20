@@ -3,9 +3,13 @@ footer{
 
     .footer__wr{
         padding: 6rem 0;
+
+        @include responsive('phone'){
+            padding: 3rem 0;
+        }
         .footer-logo{
             text-align: center;
-            margin-bottom: 8rem;
+            margin-bottom: 2rem;
 
             img{
                 width: 20rem;
@@ -18,15 +22,23 @@ footer{
 
         .footer__content{
             .footer__nav{
-                
+                @include responsive('tablet'){
+                   text-align: center;
+                }
                 ul{
                     display: inline-block;
                     padding-top: 12px;
                     border-top: 1px solid white;
+                    @include responsive('tablet'){
+                        border-top: none;
+                    }
 
                     li{
                         padding-right: 2rem;
                         display: inline-block;
+                        @include responsive('phone'){
+                            padding-right: 8px;
+                        }
 
                         &:last-child{
                             padding: 0;
@@ -44,6 +56,11 @@ footer{
                 padding-top: 12px;
                 border-top: 1px solid white;
                 color: white;
+
+                @include responsive('tablet'){
+                    border-top: none;
+                    text-align: center;
+                }
             }
         }
     }

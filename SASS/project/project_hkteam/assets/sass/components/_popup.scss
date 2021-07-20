@@ -1,6 +1,6 @@
 .popup{
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     top: 0;
     left: 0;
     height: 100vh;
@@ -17,11 +17,17 @@
         transform: translate(-50%, -50%) scale(.5);
         display: flex;
         width: 75%;
-        height: 40rem;
         background-color: white;
         border-radius: 6rem;
         overflow: hidden;
         transition: .4s ease;
+
+        @include responsive('tablet'){
+            flex-direction: column;
+        }
+        @include responsive('phone'){
+            width: 90%;
+        }
     }
 
     &__left{
@@ -32,6 +38,13 @@
             object-fit: cover;
             display: block;
         }
+        @include responsive('tablet'){
+            width: 100%;
+            display: flex;
+            img{
+                width: 50%;
+            }
+        }
     }
 
     &__right{
@@ -41,10 +54,20 @@
         flex-direction: column;
         justify-content: space-between;
 
+        @include responsive('tablet'){
+            width: 100%;
+        }
+
         .popup__heading{
             h3, h4{
                 margin-bottom: 0;
             }
+        }
+
+        .popup__content{
+            @include responsive('tablet'){
+                margin-bottom: 20px;
+            } 
         }
     }
 
